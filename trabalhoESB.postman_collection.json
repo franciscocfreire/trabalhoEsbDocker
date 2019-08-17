@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "cdf77cd5-a424-4642-ac4d-89fb5eb56921",
+		"name": "trabalho",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtem Empregado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/empregado",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"empregado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inseri Empregado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Diogo\",\n    \"cargo\": \"Analista\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/empregado",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"empregado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtem Media Salarial",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Francisco\",\n    \"cargo\": \"Analista\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/salario/mediasalarial/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"salario",
+						"mediasalarial",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtem Bonus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Francisco\",\n    \"cargo\": \"Analista\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/salario/2/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"salario",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
