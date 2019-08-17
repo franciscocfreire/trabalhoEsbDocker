@@ -1,45 +1,48 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Desafio Mule fiap
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Esse desafio consiste em criar dois serviços da Web, usando REST.
+Ambos devem ser criados no mesmo projeto usando o Anypoint Studio, o IDE para o Mule ESB  3.7 - IDE anypoint studio
+Você pode baixá-lo em https://fiapcom-my.sharepoint.com/:u:/g/personal/pf0861_fiap_com_br/Ef07SrCfPnlFiYlT3-YY5u8B9CqWgDM7ttdPqI_TngrTEw?e=2ZKvbY. 
+Certifique-se de usar a versão 3.7+ do Mule ESB.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+Acreditamos que, sem qualquer experiência anterior com o Mule, você ainda poderá usá-lo devido ao seu IDE intuitivo. 
+Se você tiver alguma dificuldade, verifique sua documentação (https://docs.mulesoft.com/mule-runtime/3.7/developing) e outros recursos como vídeos do YouTube.
 
----
+Esta fonte contém o modelo básico para sua implementação.
+O Mule 3.7+ e o Anypoint Studio são compatíveis apenas com o JDK 1.7+.
 
-## Edit a file
+### 1 - Crie fluxo expondo EmpregadoFlow, um serviço REST, onde o cliente será capaz de:
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+* Inserir um empregado no banco
+  * Recebe um funcionário e retorna uma mensagem de sucesso
+* Listar todos os funcionários
+  * payload vazio e retorna uma lista de funcionários
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+Seu serviço deve usar JSON como seu formato de representação para objetos.
 
----
+Usar banco mysql criado via docker-compose.
 
-## Create a file
+Você deve definir os nomes dos recursos e os verbos HTTP usados de acordo com ODATA.
 
-Next, you’ll add a new file to this repository.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+### 2 -  Crie fluxo expondo SalarioFlow, um serviço REST, onde o cliente será capaz de:
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
 
----
+* Obter o salário médio dos empregados
+  * Pedido vazio e retorna um decimal
+* Calcular um bônus de funcionário
+  * Recebe o ID do empregado e retorna o bônus como um decimal
+  * O bônus deve ser uma porcentagem aleatória do salário do funcionário, mas não superior a 50%
 
-## Clone a repository
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+### 3 - Crie um docker-compose e Dockerfile 
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+*Crie o Dockerfile e docker-compose.yaml e versione no bitbucket (como privado) e de acesso para o usuário daniboy1982
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+*suba os container com docker-compose up 
+
+*teste os fluxos com postman e crie um PDF com todas as evidencias das execuções do postman e do fluxo no anypointstudio.
+
+*inclua no pdf a url do repositorio do gitlab
+
+*suba APENAS o pdf no portal!
